@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "SOS-backend",
+  "name": "sos-backend",
   "main": "src/server.ts",
   "compatibility_date": "2026-07-01",
   "observability": {
