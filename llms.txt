@@ -15,10 +15,10 @@
 
 ## เอา template นี้ไปทำแอปใหม่
 1. เริ่ม repo ใหม่: download ZIP หรือ `git clone` แล้ว `rm -rf .git && git init` (ดู README หัวข้อ "เริ่มใช้ Template นี้")
-2. เปลี่ยนชื่อโปรเจกต์ (ค่า default: `ngernngern_thongthong`, `ngernngern-thongthong-backend`, `ngernngern-thongthong-db`):
+2. เปลี่ยนชื่อโปรเจกต์ (ค่า default: `SOS`, `SOS-backend`, `SOS-db`):
    - `backend/wrangler.example.jsonc` → `name`, `database_name`
-   - `backend/package.json` script `db:migrate:*` (ชื่อ db `ngernngern-thongthong-db`)
-   - `.github/workflows/deploy.yml` (อ้าง `ngernngern-thongthong-db`)
+   - `backend/package.json` script `db:migrate:*` (ชื่อ db `SOS-db`)
+   - `.github/workflows/deploy.yml` (อ้าง `SOS-db`)
    - `frontend/.env.example` → ชื่อแอป, SEO, theme
 3. เพิ่ม resource ฝั่ง backend (เช่น `bookings`): ทำตาม 9 ขั้นใน README หัวข้อ "เพิ่ม Resource ใหม่" — ใช้ไฟล์ `user` เป็น template
 4. เพิ่มหน้า/ฟีเจอร์ฝั่ง frontend: ทำตาม 5 ขั้นใน README หัวข้อ "เพิ่มหน้าใหม่" — ใช้ไฟล์ `user` เป็น template
