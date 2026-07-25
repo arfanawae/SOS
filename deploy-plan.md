@@ -92,7 +92,7 @@ git push -u origin main
 cd backend
 
 # สร้าง D1 database → คัดลอกค่า database_id จาก output
-npx wrangler d1 create starter-db
+npx wrangler d1 create ngernngern-thongthong-db
 
 # สร้าง KV namespace → คัดลอกค่า id จาก output
 npx wrangler kv namespace create CACHE
@@ -185,7 +185,7 @@ gh run watch          # ดู log แบบ realtime
 ### STEP 6 — เติม `VITE_BACKEND_URL` แล้ว deploy ซ้ำ
 
 หลัง `deploy-backend` ผ่านครั้งแรก จะได้ URL backend เช่น
-`https://starter-backend.<subdomain>.workers.dev`
+`https://ngernngern-thongthong-backend.<subdomain>.workers.dev`
 
 **🤖 AGENT** — ดึง URL จาก log ได้:
 ```bash
@@ -195,7 +195,7 @@ gh run view --log | grep "Backend deployed to"
 **👤 USER** (หรือ 🤖 AGENT ถ้าถือ token ได้) — ใส่ค่า Secret `VITE_BACKEND_URL`:
 ```bash
 # 🤖 AGENT (ถ้า gh login ok)
-gh secret set VITE_BACKEND_URL --body "https://starter-backend.<subdomain>.workers.dev"
+gh secret set VITE_BACKEND_URL --body "https://ngernngern-thongthong-backend.<subdomain>.workers.dev"
 ```
 
 แล้ว trigger deploy อีกครั้งให้ frontend build ด้วย URL ที่ถูกต้อง:
@@ -214,10 +214,10 @@ git push origin main
 
 ```bash
 # Backend health check
-curl https://starter-backend.<subdomain>.workers.dev/health
+curl https://ngernngern-thongthong-backend.<subdomain>.workers.dev/health
 
 # API docs (เปิดในเบราว์เซอร์)
-# https://starter-backend.<subdomain>.workers.dev/docs
+# https://ngernngern-thongthong-backend.<subdomain>.workers.dev/docs
 
 # Frontend
 curl -I https://<PAGES_PROJECT_NAME>.pages.dev
@@ -239,13 +239,13 @@ curl -I https://<PAGES_PROJECT_NAME>.pages.dev
 cd backend
 cp wrangler.example.jsonc wrangler.jsonc
 # แทนที่ <REPLACE_WITH_D1_DATABASE_ID> และ <REPLACE_WITH_KV_NAMESPACE_ID> ด้วยค่าจริงจาก STEP 2
-npx wrangler d1 migrations apply starter-db --remote
+npx wrangler d1 migrations apply ngernngern-thongthong-db --remote
 npm run deploy
 
 # --- Frontend ---
 cd ../frontend
 pnpm install
-VITE_BACKEND_URL="https://starter-backend.<subdomain>.workers.dev" pnpm build
+VITE_BACKEND_URL="https://ngernngern-thongthong-backend.<subdomain>.workers.dev" pnpm build
 npx wrangler pages deploy dist --project-name=<PAGES_PROJECT_NAME> --branch=main
 ```
 
